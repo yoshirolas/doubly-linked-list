@@ -87,6 +87,7 @@ class LinkedList {
             if (node.data == data) {
                 index = i;
             }
+            node = node.next;
         }
         return index;
     }
