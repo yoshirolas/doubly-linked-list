@@ -9,7 +9,7 @@ class LinkedList {
 
     append(data) {
         var node = new Node(data);
-        if (Node.data == null) {
+        if (this.length == 0) {
             this._head = node;
             this._tail = node;
         }
@@ -30,7 +30,6 @@ class LinkedList {
     tail() {
         return this._tail.data;
     }
-
     at(index) {}
 
     insertAt(index, data) {}
