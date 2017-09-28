@@ -38,12 +38,17 @@ class LinkedList {
     }
 
     insertAt(index, data) {
+        var insertNode = new Node(data);
         var node = this._head;
-        for (var i = 0; i < index - 1; i++) {
+        for (var i = 0; i < index; i++) {
             node = node.next;
         }
-        node = node.prev;
-        this.append(data);
+        var prevNode = node.prev;
+        insertNode.prev = node.prev;
+        insertNode.next = node;
+        node.prev = insertNode;
+        prevNode.next = insertNode;
+        this.length++;
     }
 
     isEmpty() {
