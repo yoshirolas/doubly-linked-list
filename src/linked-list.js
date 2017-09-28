@@ -37,7 +37,14 @@ class LinkedList {
         return node.data;
     }
 
-    insertAt(index, data) {}
+    insertAt(index, data) {
+        var node = this._head;
+        for (var i = 0; i < index - 1; i++) {
+            node = node.next;
+        }
+        node = node.prev;
+        this.append(data);
+    }
 
     isEmpty() {
         if (this.length == 0) {
@@ -60,7 +67,16 @@ class LinkedList {
 
     reverse() {}
 
-    indexOf(data) {}
+    indexOf(data) {
+        var node = this._head;
+        var index = -1;
+        for (var i = 0; i < this.length; i++) {
+            if (node.data == data) {
+                index = i;
+            }
+        }
+        return index;
+    }
 }
 
 module.exports = LinkedList;
