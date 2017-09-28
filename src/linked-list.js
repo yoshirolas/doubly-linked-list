@@ -67,7 +67,15 @@ class LinkedList {
     }
 
     deleteAt(index) {
-        
+        var node = this._head;
+        for (var i = 0; i < index; i++) {
+            node = node.next;
+        }
+        var prevNode = node.prev;
+        var nextNode = node.next;
+        prevNode.next = node.next;
+        nextNode.prev = node.prev;
+        this.length--;
     }
 
     reverse() {}
